@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -16,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <RelativeLayout
+            android:id="@+id/Realtivelayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
@@ -128,5 +130,87 @@
 
         </RelativeLayout>
     </ScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="414dp"
+        android:layout_height="283dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView"
+        android:fillViewport="true"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal" >
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:background="@color/white"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="60dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/bk" />
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:background="@color/white"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/litllec" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:background="@color/white"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/mcdonalds" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:background="@color/white"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/dominos" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:background="@color/white"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/pizzahutlogo" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:background="@color/white"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="60dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/sicilia" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:background="@color/white"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/wendys" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
