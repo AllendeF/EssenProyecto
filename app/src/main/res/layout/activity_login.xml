@@ -74,6 +74,7 @@
                 android:background="@drawable/btng"
                 android:gravity="center"
                 android:text="DONE"
+                android:onClick="iniciarSesion"
                 android:textStyle="bold"
                 />
         </RelativeLayout>

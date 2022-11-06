@@ -51,7 +51,6 @@ public class Usuario {
                 return usuario;
             }
         }
-        // TODO se podria lanzar una excepcion al no encontrar el usuairo
         return null;
     }
 
