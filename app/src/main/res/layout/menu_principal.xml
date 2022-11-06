@@ -32,42 +32,96 @@
                 android:layout_centerHorizontal="true"
                 />
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="122dp"
+                android:layout_below="@id/imageview"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/btng2" />
+
             <ImageButton
                 android:id="@+id/Botton1"
                 android:layout_width="107dp"
                 android:layout_height="80dp"
-                android:contextClickable="true"
                 android:layout_below="@+id/imageview"
                 android:layout_marginLeft="15dp"
-                app:srcCompat="@drawable/ic_burger"
                 android:layout_marginTop="30dp"
-                android:background="#F16A0F"
-                />
+                android:background="#FFD337"
+                android:contextClickable="true"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logobotton1" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Botton1"
+                android:layout_marginLeft="50dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Otros" />
 
             <ImageButton
                 android:id="@+id/Botton2"
                 android:layout_width="107dp"
                 android:layout_height="80dp"
-                android:contextClickable="true"
                 android:layout_below="@+id/imageview"
                 android:layout_centerHorizontal="true"
-                app:srcCompat="@drawable/ic_otros"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
-                android:background="#DC031C"
-                />
+                android:background="#FE952C"
+                android:contextClickable="true"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/logobotton2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Botton2"
+                android:layout_centerHorizontal="true"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Hamburguesas" />
 
             <ImageButton
                 android:id="@+id/Botton3"
                 android:layout_width="107dp"
                 android:layout_height="80dp"
                 android:layout_below="@+id/imageview"
-                android:layout_marginTop="29dp"
-                app:srcCompat="@drawable/ic_pizza"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="29dp"
                 android:layout_marginRight="15dp"
-                android:background="#EDBC07"
-                />
+                android:background="#FF3737"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logobotton3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Botton3"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="50dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:text="Pizza" />
+
+            <ImageView
+                android:id="@+id/Promo1"
+                android:layout_width="252dp"
+                android:layout_height="200dp"
+                android:layout_below="@+id/Botton2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/Promo1" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="16dp"
+                android:layout_below="@id/Promo1"
+                android:text="Restaurantes Populares"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/black"
 
              />
 
