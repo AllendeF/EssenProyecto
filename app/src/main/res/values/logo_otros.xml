@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="logos_otros">
+        <item>@drawable/kokoroó</item>
+        <item>@drawable/koggi</item>
+        <item>@drawable/Kyungkyune</item>
+        <item>@drawable/sukiyaki</item>
+        <item>@drawable/hiroshima</item>
+        <item>@drawable/el_patio</item>
+    </array>
+    
+</resources>
