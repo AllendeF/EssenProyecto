@@ -40,7 +40,7 @@ public class GrupoAdaptadorHambur extends BaseAdapter {
 		sucursalHamburguesa.setText(unHamburguesa.getSucursal() );
 
 		ImageView logoHamburguesa = view.findViewById( R.id.logo_hambur);
-		logoHamburguesa.setImageResource();
+		logoHamburguesa.setImageResource(unHamburguesa.getImage() );
 
 
 		return view;

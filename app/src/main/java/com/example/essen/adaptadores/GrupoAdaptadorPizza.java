@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.essen.R;
@@ -38,6 +39,9 @@ public class GrupoAdaptadorPizza extends BaseAdapter {
 
 		TextView sucursalPizza = view.findViewById( R.id.tv_sucursal_pizza);
 		sucursalPizza.setText(unPizza.getSucursal() );
+
+		ImageView logoPizza = view.findViewById( R.id.logo_pizza);
+		logoPizza.setImageResource(unPizza.getImage() );
 
 
 		return view;

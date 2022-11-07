@@ -2,6 +2,8 @@ package com.example.essen.data;
 
 import android.app.ListActivity;
 
+import com.example.essen.R;
+
 import java.util.ArrayList;
 
 public class Pizza extends ListActivity {
@@ -9,23 +11,25 @@ public class Pizza extends ListActivity {
     private String nombre;
     private String sucursal;
     private int rating;
+    private int image;
 
     public static ArrayList<Pizza> pizza = new ArrayList<>();
 
     static {
-        pizza.add( new Pizza("Pizza Hut", "SuperSeis", 5));
-        pizza.add( new Pizza("Sbarro", "Mcal. Lopez", 2));
-        pizza.add( new Pizza("Papa John's", "Paseo la Galeria", 5));
-        pizza.add( new Pizza("Sicilia", "Paseo la Galeria", 4));
-        pizza.add( new Pizza("Little Caesars", "Casa Central", 2));
-        pizza.add( new Pizza("Dominos", "Shopping del Sol", 1));
+        pizza.add( new Pizza("Pizza Hut", "SuperSeis", 5, R.drawable.pizzahutlogo));
+        pizza.add( new Pizza("Sbarro", "Mcal. Lopez", 2, R.drawable.sbarro));
+        pizza.add( new Pizza("Papa John's", "Paseo la Galeria", 5, R.drawable.papajohns));
+        pizza.add( new Pizza("Sicilia", "Paseo la Galeria", 4, R.drawable.sicilia));
+        pizza.add( new Pizza("Little Caesars", "Casa Central", 2, R.drawable.litllec));
+        pizza.add( new Pizza("Dominos", "Shopping del Sol", 1, R.drawable.dominos));
 
     }
 
-    public Pizza(String nombre, String sucursal, int rating) {
+    public Pizza(String nombre, String sucursal, int rating, int image) {
         this.nombre = nombre;
         this.sucursal = sucursal;
         this.rating = rating;
+        this.image = image;
     }
     public static void agregarPizza( Pizza unPizza ) {
         pizza.add( unPizza );
@@ -43,6 +47,14 @@ public class Pizza extends ListActivity {
 
     public void setSucursal(String sucursal) {
         this.sucursal = sucursal;
+    }
+
+    public int getImage(){
+        return image;
+    }
+
+    public void setImage(int image){
+        this.image = image;
     }
 
     public int getId() {

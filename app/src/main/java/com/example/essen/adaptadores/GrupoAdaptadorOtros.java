@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.essen.R;
@@ -38,6 +39,9 @@ public class GrupoAdaptadorOtros extends BaseAdapter {
 
 		TextView sucursalOtros = view.findViewById( R.id.tv_sucursal_otros);
 		sucursalOtros.setText(unOtros.getSucursal() );
+
+		ImageView logoOtros = view.findViewById( R.id.logo_otros);
+		logoOtros.setImageResource(unOtros.getImage() );
 
 
 		return view;
