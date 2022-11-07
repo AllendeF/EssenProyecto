@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.essen.R;
@@ -28,16 +29,19 @@ public class GrupoAdaptadorOtros extends BaseAdapter {
 	@Override
 	public View getView(int posicion, View vista, ViewGroup padre) {
 		LayoutInflater inflater = actividad.getLayoutInflater();
-		View view = inflater.inflate( R.layout.elemento_catalogo_otros, null, true);
+		View view = inflater.inflate( R.layout.elemento_catalogo, null, true);
 
 		//TODO obtener vistas correspondientes a un elemento y asignarle valor
 		Otros unOtros = lista.get(posicion);
 
-		TextView nombreOtros = view.findViewById( R.id.tv_nombre_otros);
+		TextView nombreOtros = view.findViewById( R.id.tv_nombre_categoria);
 		nombreOtros.setText(unOtros.getNombre() );
 
-		TextView sucursalOtros = view.findViewById( R.id.tv_sucursal_otros);
+		TextView sucursalOtros = view.findViewById( R.id.tv_sucursal_categoria);
 		sucursalOtros.setText(unOtros.getSucursal() );
+
+		ImageView logoOtros = view.findViewById( R.id.logo_categoria);
+		logoOtros.setImageResource(unOtros.getImage() );
 
 
 		return view;
