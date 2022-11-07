@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="logos_hamburs">
+        <item>@drawable/wendys</item>
+        <item>@drawable/mcdonalds</item>
+        <item>@drawable/bk</item>
+        <item>@drawable/carlsjr</item>
+        <item>@drawable/sonic</item>
+        <item>@drawable/five_guys</item>
+    </array>
+    
+</resources>

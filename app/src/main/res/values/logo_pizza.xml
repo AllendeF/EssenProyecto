@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="logos_pizzas">
+        <item>@drawable/pizzahutlogo</item>
+        <item>@drawable/sbarro</item>
+        <item>@drawable/sicilia</item>
+        <item>@drawable/dominos</item>
+        <item>@drawable/litllec</item>
+        <item>@drawable/papajohns</item>
+    </array>
+    
+</resources>
