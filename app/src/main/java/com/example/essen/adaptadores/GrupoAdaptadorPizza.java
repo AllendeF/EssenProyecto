@@ -29,18 +29,18 @@ public class GrupoAdaptadorPizza extends BaseAdapter {
 	@Override
 	public View getView(int posicion, View vista, ViewGroup padre) {
 		LayoutInflater inflater = actividad.getLayoutInflater();
-		View view = inflater.inflate( R.layout.elemento_catalogo_pizza, null, true);
+		View view = inflater.inflate( R.layout.elemento_catalogo, null, true);
 
 		//TODO obtener vistas correspondientes a un elemento y asignarle valor
 		Pizza unPizza = lista.get(posicion);
 
-		TextView nombrePizza = view.findViewById( R.id.tv_nombre_pizza);
+		TextView nombrePizza = view.findViewById( R.id.tv_nombre_categoria);
 		nombrePizza.setText(unPizza.getNombre() );
 
-		TextView sucursalPizza = view.findViewById( R.id.tv_sucursal_pizza);
+		TextView sucursalPizza = view.findViewById( R.id.tv_sucursal_categoria);
 		sucursalPizza.setText(unPizza.getSucursal() );
 
-		ImageView logoPizza = view.findViewById( R.id.logo_pizza);
+		ImageView logoPizza = view.findViewById( R.id.logo_categoria);
 		logoPizza.setImageResource(unPizza.getImage() );
 
 

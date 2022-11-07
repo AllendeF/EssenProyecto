@@ -28,18 +28,18 @@ public class GrupoAdaptadorHambur extends BaseAdapter {
 	@Override
 	public View getView(int posicion, View vista, ViewGroup padre) {
 		LayoutInflater inflater = actividad.getLayoutInflater();
-		View view = inflater.inflate( R.layout.elemento_catalogo_hambur, null, true);
+		View view = inflater.inflate( R.layout.elemento_catalogo, null, true);
 
 		//TODO obtener vistas correspondientes a un elemento y asignarle valor
 		Hamburguesas unHamburguesa = lista.get(posicion);
 
-		TextView nombreHamburguesa = view.findViewById( R.id.tv_nombre_hambur);
+		TextView nombreHamburguesa = view.findViewById( R.id.tv_nombre_categoria);
 		nombreHamburguesa.setText(unHamburguesa.getNombre() );
 
-		TextView sucursalHamburguesa = view.findViewById( R.id.tv_sucursal_hambur);
+		TextView sucursalHamburguesa = view.findViewById( R.id.tv_sucursal_categoria);
 		sucursalHamburguesa.setText(unHamburguesa.getSucursal() );
 
-		ImageView logoHamburguesa = view.findViewById( R.id.logo_hambur);
+		ImageView logoHamburguesa = view.findViewById( R.id.logo_categoria);
 		logoHamburguesa.setImageResource(unHamburguesa.getImage() );
 
 

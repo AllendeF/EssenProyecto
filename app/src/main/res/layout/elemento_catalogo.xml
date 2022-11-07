@@ -6,44 +6,45 @@
     android:layout_height="100dp">
 
     <ImageView
-        android:id="@+id/logo_otros"
+        android:id="@+id/logo_categoria"
         android:layout_width="70dp"
         android:layout_height="80dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="12dp"
-        app:layout_constraintEnd_toStartOf="@+id/tv_sucursal_otros"
+        android:src="@drawable/essen_logo"
+        app:layout_constraintEnd_toStartOf="@+id/tv_sucursal_categoria"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_nombre_otros"
+        android:id="@+id/tv_nombre_categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:gravity="center_vertical"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_sucursal_otros"
-        app:layout_constraintStart_toEndOf="@id/logo_otros"
+        app:layout_constraintBottom_toTopOf="@+id/tv_sucursal_categoria"
+        app:layout_constraintStart_toEndOf="@id/logo_categoria"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Nombre Grupo" />
 
     <TextView
-        android:id="@+id/tv_sucursal_otros"
+        android:id="@+id/tv_sucursal_categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tv_nombre_otros"
+        android:layout_below="@id/tv_nombre_categoria"
         android:layout_marginLeft="100dp"
         android:layout_marginEnd="257dp"
         android:layout_marginBottom="10dp"
-        android:gravity="bottom"
         android:text="Sucursal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logo_otros"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_otros" />
+        app:layout_constraintStart_toEndOf="@+id/logo_categoria"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nombre_categoria" />
+
 
     />
 </androidx.constraintlayout.widget.ConstraintLayout>

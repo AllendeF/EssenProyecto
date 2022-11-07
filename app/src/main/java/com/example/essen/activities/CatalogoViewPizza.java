@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,15 +20,18 @@ public class CatalogoViewPizza extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_pizza);
+        setContentView(R.layout.list_catalogo);
 
-        ListView listView = findViewById( R.id.catalogo_pizza);
+        TextView titulo = findViewById(R.id.tv_titulo_catalogo);
+        titulo.setText("Pizza");
+
+        ListView listView = findViewById( R.id.catalogo_listview);
         listView.setAdapter(new GrupoAdaptadorPizza(this, Pizza.pizza));
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(CatalogoViewPizza.this, VerDatosGrupoActivity.class);
+                Intent intent = new Intent(CatalogoViewPizza.this, ActivityHambur.class);
                 intent.putExtra("idGrupo", i);
                 startActivity( intent );
             }
