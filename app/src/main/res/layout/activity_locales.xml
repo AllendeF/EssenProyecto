@@ -47,6 +47,17 @@
             android:layout_marginTop="0dp"
              />
 
+        <androidx.appcompat.widget.AppCompatRatingBar
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:id="@+id/ratinglocal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:rating="5" />
+
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="622dp"
@@ -87,11 +98,11 @@
 
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Informacion1"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:gravity="center_horizontal"
             android:layout_centerHorizontal="true"
             android:text="MENÚ"
@@ -99,90 +110,20 @@
             android:textStyle="bold"
 
             />
-
-        <ImageView
-            android:id="@+id/foto_menuitem1"
-            android:layout_width="128dp"
-            android:layout_height="93dp"
-            android:layout_below="@id/textView7"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="12dp"
-            android:scaleType="fitCenter"
-            tools:srcCompat="@drawable/mcdonalds" />
-
-        <TextView
-            android:id="@+id/menuitem1"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/menuview"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView7"
-            tools:text="McChicken"
-            android:gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:textStyle="bold"
-            android:textSize="15dp"
-
+            android:layout_below="@+id/menu"
             />
 
         <TextView
-            android:id="@+id/precio_menuitem1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/menuitem1"
-            tools:text="25.000 gs"
-            android:gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:textSize="15dp"
-
-            />
-
-        <ImageView
-            android:id="@+id/foto_menuitem2"
-            android:layout_width="128dp"
-            android:layout_height="93dp"
-            android:layout_below="@id/foto_menuitem1"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="18dp"
-            android:scaleType="fitCenter"
-            tools:srcCompat="@drawable/mcdonalds" />
-
-        <TextView
-            android:id="@+id/menuitem2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/precio_menuitem1"
-            tools:text="Combo Doble Bacon"
-            android:gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
-            android:textStyle="bold"
-            android:textSize="15dp"
-
-            />
-
-        <TextView
-            android:id="@+id/precio_menuitem2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/menuitem2"
-            tools:text="32.000 gs"
-            android:gravity="center_horizontal"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:textSize="15dp"
-
-            />
-
-
-        <TextView
-            android:id="@+id/comentarios"
+            android:id="@+id/comentariosview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="COMENTARIOS"
-            android:layout_below="@id/foto_menuitem2"
+            android:layout_below="@id/menuview"
             android:gravity="center_horizontal"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
@@ -196,21 +137,13 @@
             android:layout_height="20dp"
             android:layout_marginTop="10dp"
             android:text="Calificar este local"
-            android:layout_below="@id/comentarios"
+            android:layout_below="@id/comentariosview"
             android:textSize="12dp"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
             android:background="@drawable/btng"
 
             />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/calificacion"
-
-            android:layout_marginTop="10dp" />
-
 
     </RelativeLayout>
     </ScrollView>

@@ -45,6 +45,7 @@ public class GrupoAdaptadorHambur extends BaseAdapter {
 
 		return view;
 	}
+
 	
 	@Override
 	public int getCount() {		

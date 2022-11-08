@@ -49,10 +49,11 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
                 android:background="#FFD337"
-                android:onClick="lanzarCatalogoOtros"
                 android:contextClickable="true"
+                android:onClick="lanzarCatalogoOtros"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/logobotton1" />
+                app:srcCompat="@drawable/logobotton1"
+                tools:ignore="SpeakableTextPresentCheck" />
 
 
             <TextView
@@ -118,7 +119,6 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
                 android:src="@drawable/promo1" />
-                />
         </RelativeLayout>
     </ScrollView>
 
@@ -152,7 +152,8 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton1"
+                android:id="@+id/bk_menu"
+                android:onClick="lanzarbkpantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
@@ -162,7 +163,8 @@
                 app:srcCompat="@drawable/bk" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/litllec_menu"
+                android:onClick="lanzarlitllecpantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
@@ -172,7 +174,8 @@
                 android:src="@drawable/litllec" />
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/mcdonalds_home"
+                android:onClick="lanzarmcdonaldspantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
@@ -182,7 +185,8 @@
                 app:srcCompat="@drawable/mcdonalds" />
 
             <ImageButton
-                android:id="@+id/imageButton4"
+                android:id="@+id/dominos_home"
+                android:onClick="lanzardominospantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
@@ -192,7 +196,8 @@
                 app:srcCompat="@drawable/dominos" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/pizzahut_home"
+                android:onClick="lanzarpizzahutpantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
@@ -202,7 +207,8 @@
                 app:srcCompat="@drawable/pizzahutlogo" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/sicilia_home"
+                android:onClick="lanzarsiciliapantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
@@ -212,7 +218,8 @@
                 app:srcCompat="@drawable/sicilia" />
 
             <ImageButton
-                android:id="@+id/imageButton7"
+                android:id="@+id/wendys_home"
+                android:onClick="lanzarwendyspantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
