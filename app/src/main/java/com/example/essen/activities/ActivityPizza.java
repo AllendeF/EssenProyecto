@@ -41,7 +41,7 @@ public class ActivityPizza extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            idPizza = extras.getInt("idPizza", -1);
+            idPizza = extras.getInt("idLocal", -1);
         }
 
         actualizarVista();
@@ -123,7 +123,7 @@ public class ActivityPizza extends AppCompatActivity {
 
     public void lanzarComentario (View view) {
         Intent i = new Intent(this, ActivityComentario.class);
-        //i.putExtra("id", (long)0);
+        i.putExtra("idScreen", i);
         startActivity(i);
     }
 

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -16,6 +17,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.essen.R;
+import com.example.essen.adaptadores.GrupoAdaptadorComentario;
+import com.example.essen.adaptadores.GrupoAdaptadorHambur;
+import com.example.essen.data.Comentarios;
 import com.example.essen.data.Hamburguesas;
 
 import org.w3c.dom.Text;
@@ -48,10 +52,13 @@ public class ActivityHambur extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            idHambur = extras.getInt("idHambur", -1);
+            idHambur = extras.getInt("idLocal", -1);
         }
 
         actualizarVista();
+
+        ListView listView = findViewById( R.id.comentarios);
+        listView.setAdapter(new GrupoAdaptadorComentario(this, Comentarios.comments));
     }
 
     public void actualizarVista() {
@@ -133,7 +140,7 @@ public class ActivityHambur extends AppCompatActivity {
     }
     public void lanzarComentario (View view) {
         Intent i = new Intent(this, ActivityComentario.class);
-        //i.putExtra("id", (long)0);
+        i.putExtra("idScreen", i);
         startActivity(i);
     }
 }

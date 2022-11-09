@@ -30,7 +30,7 @@ public class CatalogoViewHambur extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(CatalogoViewHambur.this, ActivityHambur.class);
-                intent.putExtra("idHambur", i);
+                intent.putExtra("idLocal", i);
                 startActivity( intent );
             }
         });

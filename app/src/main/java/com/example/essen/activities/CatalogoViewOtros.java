@@ -32,7 +32,7 @@ public class CatalogoViewOtros extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(CatalogoViewOtros.this, ActivityOtros.class);
-                intent.putExtra("idOtros", i);
+                intent.putExtra("idLocal", i);
                 startActivity( intent );
             }
         });

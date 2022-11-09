@@ -32,7 +32,7 @@ public class CatalogoViewPizza extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(CatalogoViewPizza.this, ActivityPizza.class);
-                intent.putExtra("idPizza", i);
+                intent.putExtra("idLocal", i);
                 startActivity( intent );
             }
         });
