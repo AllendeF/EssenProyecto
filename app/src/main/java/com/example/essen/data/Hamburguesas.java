@@ -115,7 +115,7 @@ public class Hamburguesas extends ListActivity {
         return menuitem1;
     }
 
-    public void setMenuitem1(int id) {
+    public void setMenuitem1(int menuitem1) {
         this.menuitem1 = menuitem1;
     }
 
@@ -123,7 +123,7 @@ public class Hamburguesas extends ListActivity {
         return menuitem2;
     }
 
-    public void setMenuitem2(int id) {
+    public void setMenuitem2(int menuitem2) {
         this.menuitem2 = menuitem2;
     }
 

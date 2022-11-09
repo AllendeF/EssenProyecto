@@ -1,5 +1,6 @@
 package com.example.essen.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,6 +19,8 @@ import com.example.essen.R;
 import com.example.essen.data.Hamburguesas;
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class ActivityHambur extends AppCompatActivity {
 
@@ -38,13 +41,14 @@ public class ActivityHambur extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_locales);
         menu_locales = findViewById(R.id.menuview);
+
+        menu_locales.setAdapter(new RVAdapter(this, Hamburguesas.hambur));
         menu_locales.setLayoutManager(new LinearLayoutManager(this));
-        menu_locales.setAdapter(new RVAdapter());
 
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            idHambur = extras.getInt("idGrupo", -1);
+            idHambur = extras.getInt("idHambur", -1);
         }
 
         actualizarVista();
@@ -78,35 +82,38 @@ public class ActivityHambur extends AppCompatActivity {
         }
     }
     class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+        public RVAdapter(ActivityHambur activityHambur, ArrayList<Hamburguesas> hambur) {
+
+        }
+
         @NonNull
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             if (viewType == 0) {
-                logomenuitem = (ImageView) findViewById(R.id.fotomenuitem1);
-                logomenuitem.setImageResource(unHamburguesa.getMenuitem1());
-
-                nombremenuitem = (TextView) findViewById(R.id.titulomenuitem1);
-                nombremenuitem.setText(unHamburguesa.getNombremenuitem1());
-
-                precio = (TextView) findViewById(R.id.menuitemcosto1);
-                precio.setText(unHamburguesa.getPreciomitem1());
-
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menuitems, parent, false);
-                    return new menulocales (view);
+                    logomenuitem = (ImageView) view.findViewById(R.id.fotomenuitem1);
+                    logomenuitem.setImageResource(unHamburguesa.getMenuitem1());
+
+                    nombremenuitem = (TextView) view.findViewById(R.id.titulomenuitem1);
+                    nombremenuitem.setText(unHamburguesa.getNombremenuitem1());
+
+                    precio = (TextView) view.findViewById(R.id.menuitemcosto1);
+                    precio.setText(unHamburguesa.getPreciomitem1());
+
+                        return new menulocales (view);
             }
             else {
-                logomenuitem = (ImageView) findViewById(R.id.fotomenuitem1);
-                logomenuitem.setImageResource(unHamburguesa.getMenuitem2());
-
-                nombremenuitem = (TextView) findViewById(R.id.titulomenuitem1);
-                nombremenuitem.setText(unHamburguesa.getNombremenuitem2());
-
-                precio = (TextView) findViewById(R.id.menuitemcosto1);
-                precio.setText(unHamburguesa.getPreciomitem2());
-
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.menuitems, parent, false);
+                    logomenuitem = (ImageView) view.findViewById(R.id.fotomenuitem1);
+                    logomenuitem.setImageResource(unHamburguesa.getMenuitem2());
 
-                    return new menulocales (view);
+                    nombremenuitem = (TextView) view.findViewById(R.id.titulomenuitem1);
+                    nombremenuitem.setText(unHamburguesa.getNombremenuitem2());
+
+                    precio = (TextView) view.findViewById(R.id.menuitemcosto1);
+                    precio.setText(unHamburguesa.getPreciomitem2());
+
+                        return new menulocales (view);
             }
         }
         @Override
@@ -116,13 +123,18 @@ public class ActivityHambur extends AppCompatActivity {
 
         @Override
         public int getItemViewType(int position) {
-            return position % 3;
+            return position ;
         }
 
         @Override
         public int getItemCount() {
             return 2;
         }
+    }
+    public void lanzarComentario (View view) {
+        Intent i = new Intent(this, ActivityComentario.class);
+        //i.putExtra("id", (long)0);
+        startActivity(i);
     }
 }
 

@@ -25,7 +25,11 @@
         <activity android:name=".activities.MenuPrincipalActivity"/>
         <activity android:name=".activities.CatalogoViewHambur"/>
         <activity android:name=".activities.CatalogoViewOtros"/>
-        <activity android:name=".activities.CatalogoViewPizza"
+        <activity android:name=".activities.CatalogoViewPizza"/>
+        <activity android:name=".activities.ActivityPizza"/>
+        <activity android:name=".activities.ActivityHambur"/>
+        <activity android:name=".activities.ActivityOtros"/>
+        <activity android:name=".activities.ActivityComentario"
             android:exported="true">
 
         </activity>

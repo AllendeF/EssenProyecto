@@ -31,8 +31,8 @@ public class CatalogoViewOtros extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(CatalogoViewOtros.this, ActivityHambur.class);
-                intent.putExtra("idGrupo", i);
+                Intent intent = new Intent(CatalogoViewOtros.this, ActivityOtros.class);
+                intent.putExtra("idOtros", i);
                 startActivity( intent );
             }
         });

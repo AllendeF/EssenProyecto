@@ -31,8 +31,8 @@ public class CatalogoViewPizza extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(CatalogoViewPizza.this, ActivityHambur.class);
-                intent.putExtra("idGrupo", i);
+                Intent intent = new Intent(CatalogoViewPizza.this, ActivityPizza.class);
+                intent.putExtra("idPizza", i);
                 startActivity( intent );
             }
         });
