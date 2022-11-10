@@ -1,5 +1,6 @@
 package com.example.essen.activities;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,8 +22,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.essen.R;
+import com.example.essen.adaptadores.GrupoAdaptadorComentario;
+import com.example.essen.data.Comentarios;
 import com.example.essen.data.Hamburguesas;
 import com.example.essen.data.Otros;
+import com.example.essen.data.Pizza;
+
+import java.util.ArrayList;
 
 public class ActivityOtros extends AppCompatActivity {
 
@@ -36,6 +43,7 @@ public class ActivityOtros extends AppCompatActivity {
     private TextView precio;
     private RatingBar califilicacion_local;
 
+    GrupoAdaptadorComentario adaptador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +57,23 @@ public class ActivityOtros extends AppCompatActivity {
             idOtros = extras.getInt("idLocal", -1);
         }
 
+        ListView listView = findViewById( R.id.comentarios);
+        ArrayList<Comentarios> comentariosOtros = obtenerComentarios(Comentarios.comments);
+        adaptador = new GrupoAdaptadorComentario(this, comentariosOtros);
+        listView.setAdapter(adaptador);
+
         actualizarVista();
+    }
+    ArrayList<Comentarios> obtenerComentarios (ArrayList<Comentarios> comentarios) {
+        ArrayList<Comentarios> comentariosOtros = new ArrayList<>();
+        for (Comentarios c: comentarios){
+            if (c.getIdcategoria() == 3) {
+                if (c.getLocal() == idOtros) {
+                    comentariosOtros.add(c);
+                }
+            }
+        }
+        return comentariosOtros;
     }
 
     public void actualizarVista(){
@@ -128,9 +152,18 @@ public class ActivityOtros extends AppCompatActivity {
     }
     public void lanzarComentario (View view) {
         Intent i = new Intent(this, ActivityComentario.class);
-        startActivity(i);
+        i.putExtra("idLocal", idOtros);
+        i.putExtra("idCategoria", Otros.idcategoria);
+        startActivityForResult(i, 123);
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 123 && resultCode == Activity.RESULT_OK) {
+            adaptador.setLocal( obtenerComentarios(Comentarios.comments) );
+            adaptador.notifyDataSetChanged();
+        }
+    }
     public void lanzarInfo (View view) {
         showDialog();
     }
@@ -141,6 +174,13 @@ public class ActivityOtros extends AppCompatActivity {
     private void showDialog() {
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.info_locales);
+
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            idOtros = extras.getInt("idLocal", -1);
+        }
+
+        unOtros = Otros.otros.get(idOtros);
 
         infolocales = (ImageView) findViewById(R.id.infolocal);
         infolocales.setImageResource(unOtros.getInfo());

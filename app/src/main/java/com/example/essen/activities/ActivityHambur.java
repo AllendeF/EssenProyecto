@@ -1,9 +1,11 @@
 package com.example.essen.activities;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,7 +34,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class ActivityHambur extends AppCompatActivity {
-
+    String TAG = "ActivityHambur";
     private int idHambur = -1;
     private Hamburguesas unHamburguesa;
     private TextView nombre;
@@ -45,7 +47,7 @@ public class ActivityHambur extends AppCompatActivity {
     private RecyclerView menu_locales;
 
 
-
+    GrupoAdaptadorComentario adaptador;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,10 +64,26 @@ public class ActivityHambur extends AppCompatActivity {
         }
 
         ListView listView = findViewById( R.id.comentarios);
-        listView.setAdapter(new GrupoAdaptadorComentario(this, Comentarios.comments));
+        ArrayList<Comentarios> comentariosHambur = obtenerComentarios(Comentarios.comments);
+        adaptador = new GrupoAdaptadorComentario(this, comentariosHambur);
+        listView.setAdapter(adaptador);
 
         actualizarVista();
 
+    }
+    ArrayList<Comentarios> obtenerComentarios (ArrayList<Comentarios> comentarios) {
+        ArrayList<Comentarios> comentariosHamburguesas = new ArrayList<>();
+        for (Comentarios c: comentarios){
+            Log.i (TAG, "Categoria: " + c.getIdcategoria());
+            if (c.getIdcategoria() == 1) {
+                Log.i (TAG, "Local: " + c.getLocal() + " idHambur: " + idHambur);
+                if (c.getLocal() == idHambur) {
+                    Log.i (TAG, "Agregue comentario: " + c.getComentario());
+                    comentariosHamburguesas.add(c);
+                }
+            }
+        }
+        return comentariosHamburguesas;
     }
 
     public void actualizarVista() {
@@ -147,7 +165,17 @@ public class ActivityHambur extends AppCompatActivity {
     }
     public void lanzarComentario (View view) {
         Intent i = new Intent(this, ActivityComentario.class);
-        startActivity(i);
+        i.putExtra("idLocal", idHambur);
+        i.putExtra("idCategoria", Hamburguesas.idcategoria);
+        startActivityForResult(i, 123);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 123 && resultCode == Activity.RESULT_OK) {
+            adaptador.setLocal( obtenerComentarios(Comentarios.comments) );
+            adaptador.notifyDataSetChanged();
+        }
     }
     public void lanzarInfo (View view) {
         showDialog();
@@ -161,6 +189,10 @@ public class ActivityHambur extends AppCompatActivity {
         dialog = new Dialog(this);
         dialog.setContentView(R.layout.info_locales);
 
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            idHambur = extras.getInt("idLocal", -1);
+        }
 
         unHamburguesa = Hamburguesas.hambur.get(idHambur);
 

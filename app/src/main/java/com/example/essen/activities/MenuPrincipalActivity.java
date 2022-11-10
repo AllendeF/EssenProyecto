@@ -49,37 +49,37 @@ public class MenuPrincipalActivity extends AppCompatActivity {
     //Lanzar diferentes botones a activity
     public void lanzarbkpantalla(View view){
         Intent i = new Intent(this, ActivityHambur.class);
-        i.putExtra("idHambur", 1);
+        i.putExtra("idLocal", 1);
         startActivity( i );
     }
     public void lanzarmcdonaldspantalla(View view){
         Intent i = new Intent(this, ActivityHambur.class);
-        i.putExtra("idHambur", 0);
+        i.putExtra("idLocal", 0);
         startActivity( i );
     }
     public void lanzarwendyspantalla(View view){
         Intent i = new Intent(this, ActivityHambur.class);
-        i.putExtra("idHambur", 2);
+        i.putExtra("idLocal", 2);
         startActivity( i );
     }
     public void lanzarlitllecpantalla(View view){
         Intent i = new Intent(this, ActivityPizza.class);
-        i.putExtra("idPizza", 4);
+        i.putExtra("idLocal", 4);
         startActivity( i );
     }
     public void lanzardominospantalla(View view){
         Intent i = new Intent(this, ActivityPizza.class);
-        i.putExtra("idPizza", 5);
+        i.putExtra("idLocal", 5);
         startActivity( i );
     }
     public void lanzarpizzahutpantalla(View view){
         Intent i = new Intent(this, ActivityPizza.class);
-        i.putExtra("idPizza", 0);
+        i.putExtra("idLocal", 0);
         startActivity( i );
     }
     public void lanzarsiciliapantalla(View view){
         Intent i = new Intent(this, ActivityPizza.class);
-        i.putExtra("idPizza", 3);
+        i.putExtra("idLocal", 3);
         startActivity( i );
     }
 

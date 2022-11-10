@@ -2,6 +2,7 @@ package com.example.essen.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,7 +15,7 @@ import com.example.essen.adaptadores.GrupoAdaptadorHambur;
 import com.example.essen.data.Hamburguesas;
 
 public class CatalogoViewHambur extends AppCompatActivity {
-
+    String TAG = "CatalogoViewHambur";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,7 @@ public class CatalogoViewHambur extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(CatalogoViewHambur.this, ActivityHambur.class);
                 intent.putExtra("idLocal", i);
+                Log.i (TAG, "IdLocal: " + i);
                 startActivity( intent );
             }
         });

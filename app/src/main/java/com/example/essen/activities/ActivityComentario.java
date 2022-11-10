@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +12,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.essen.R;
@@ -18,7 +20,9 @@ import com.example.essen.data.Comentarios;
 import com.example.essen.data.Usuario;
 
 public class ActivityComentario extends AppCompatActivity {
-    private int local;
+    String TAG = "ActivityComentario";
+    private int local = -1;
+    private int idcategoria = -1;
     TextView rateCount, muestraRating;
     EditText review;
     Button agregar;
@@ -39,7 +43,9 @@ public class ActivityComentario extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
-            local = extras.getInt("idScreen", -1);
+            local = extras.getInt("idLocal", -1);
+            Log.i (TAG, "Local recibido: " + local);
+            idcategoria = extras.getInt("idCategoria", -1);
         }
 
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
@@ -71,17 +77,17 @@ public class ActivityComentario extends AppCompatActivity {
             public void onClick(View view) {
                 temp = rateCount.getText().toString();
                 String comentario = String.valueOf(review.getText());
-                muestraRating.setText("Tu calificación: \n" + temp + "\n" + comentario);
 
                 Toast.makeText(getApplicationContext(), "Se ha agregado tu comentario", Toast.LENGTH_SHORT).show();
+                Log.i (TAG, "antes de crear comentario local: " + local);
 
-                Comentarios comentarios = new Comentarios( comentario, rateValue, Usuario.getUsuarioLogueado(), local);
+                Comentarios comentarios = new Comentarios( idcategoria, comentario, rateValue, Usuario.getUsuarioLogueado(), local);
                 Comentarios.agregarComentario(comentarios);
 
+                Intent intent = new Intent();
+                setResult(RESULT_OK, intent);
 
-                review.setText("");
-                ratingBar.setRating(0);
-                rateCount.setText("");
+                finish();
 
 
             }

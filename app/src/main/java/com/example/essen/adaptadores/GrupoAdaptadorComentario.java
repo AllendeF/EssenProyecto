@@ -20,11 +20,14 @@ import java.util.ArrayList;
 public class GrupoAdaptadorComentario extends BaseAdapter {
 
     private final Activity actividad;
-    private final ArrayList<Comentarios> local;
+    private ArrayList<Comentarios> local;
 
     public GrupoAdaptadorComentario(Activity actividad, ArrayList<Comentarios> local){
         super();
         this.actividad = actividad;
+        this.local = local;
+    }
+    public void setLocal (ArrayList<Comentarios> local) {
         this.local = local;
     }
 

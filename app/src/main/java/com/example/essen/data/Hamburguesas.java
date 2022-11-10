@@ -7,6 +7,7 @@ import com.example.essen.R;
 import java.util.ArrayList;
 
 public class Hamburguesas extends ListActivity {
+    public static int idcategoria = 1;
     private int id;
     private String nombre;
     private String sucursal;

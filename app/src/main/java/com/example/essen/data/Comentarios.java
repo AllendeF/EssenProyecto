@@ -6,6 +6,7 @@ import java.util.Date;
 
 public class Comentarios {
     private int id;
+    private int idcategoria;
     private String comentario;
     private float rating;
     private Usuario creador;
@@ -18,10 +19,12 @@ public class Comentarios {
 
     }
 
-    public Comentarios(String comentario, float rating, Usuario creador, int local) {
+    public Comentarios(int idcategoria, String comentario, float rating, Usuario creador, int local) {
         this.comentario = comentario;
+        this.idcategoria = idcategoria;
         this.rating = rating;
         this.creador = com.example.essen.data.Usuario.getUsuarioLogueado();
+        this.local = local;
     }
     public static void agregarComentario( Comentarios unComentario ) {
         comments.add( unComentario );
@@ -56,6 +59,14 @@ public class Comentarios {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdcategoria() {
+        return idcategoria;
+    }
+
+    public void setIdcategoria(int idcategoria) {
+        this.idcategoria = idcategoria;
     }
 
     public int getLocal() {

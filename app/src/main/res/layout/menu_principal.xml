@@ -32,12 +32,26 @@
                 android:src="@drawable/essen_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/categorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="2dp"
+                android:text="Categorias"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:layout_below="@id/imageview"
+                app:layout_constraintTop_toBottomOf="@id/imageview"
+                app:layout_constraintStart_toStartOf="parent"
+                />
 
             <ImageView
                 android:id="@+id/background"
                 android:layout_width="match_parent"
                 android:layout_height="122dp"
-                android:layout_below="@id/imageview"
+                android:layout_below="@id/categorias"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/btng2" />
@@ -46,7 +60,7 @@
                 android:id="@+id/Botton1"
                 android:layout_width="107dp"
                 android:layout_height="80dp"
-                android:layout_below="@+id/imageview"
+                android:layout_below="@+id/categorias"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
                 android:background="#FFD337"
@@ -70,7 +84,7 @@
                 android:id="@+id/Botton2"
                 android:layout_width="107dp"
                 android:layout_height="80dp"
-                android:layout_below="@+id/imageview"
+                android:layout_below="@+id/categorias"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="30dp"
@@ -93,7 +107,7 @@
                 android:id="@+id/Botton3"
                 android:layout_width="107dp"
                 android:layout_height="80dp"
-                android:layout_below="@+id/imageview"
+                android:layout_below="@+id/categorias"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="29dp"
                 android:onClick="lanzarCatalogoPizza"
@@ -128,31 +142,31 @@
 
                     <ImageView
                         android:layout_width="300dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:background="@color/white"
                         android:scaleType="fitXY"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/promohambur">
+                        android:src="@drawable/promo1">
 
                     </ImageView>
 
                     <ImageView
                         android:layout_width="300dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:background="@color/white"
                         android:scaleType="fitXY"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/promopizza">
+                        android:src="@drawable/combo_wendys">
 
                     </ImageView>
 
                     <ImageView
                         android:layout_width="300dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="150dp"
                         android:background="@color/white"
                         android:scaleType="fitXY"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/comida_tradicional">
+                        android:src="@drawable/comobk">
 
                     </ImageView>
 
@@ -226,12 +240,12 @@
 
             <ImageButton
                 android:id="@+id/litllec_menu"
-                android:onClick="lanzarlitllecpantalla"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:background="@color/white"
+                android:onClick="lanzarlitllecpantalla"
                 android:scaleType="fitCenter"
                 android:src="@drawable/litllec" />
 
