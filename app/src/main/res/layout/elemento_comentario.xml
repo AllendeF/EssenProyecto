@@ -21,14 +21,13 @@
         android:id="@+id/nombre_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
         android:gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
         android:textSize="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/coment"
-        app:layout_constraintStart_toEndOf="@id/userprofile"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/userprofile"
         tools:text="Nombre Usuario" />
 
     <TextView
@@ -36,14 +35,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/nombre_usuario"
-        android:layout_marginLeft="150dp"
-        android:layout_marginEnd="257dp"
         android:layout_marginBottom="10dp"
         android:text="Comentario"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="10dp"
         app:layout_constraintStart_toEndOf="@+id/userprofile"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_usuario" />
+        app:layout_constraintTop_toBottomOf="@+id/nombre_usuario"
+         />
 
     <RatingBar
         android:id="@+id/ratingcomentario"

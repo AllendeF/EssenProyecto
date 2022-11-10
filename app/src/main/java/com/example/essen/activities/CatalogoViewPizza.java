@@ -4,15 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.essen.R;
 import com.example.essen.adaptadores.GrupoAdaptadorHambur;
+import com.example.essen.adaptadores.GrupoAdaptadorOtros;
 import com.example.essen.adaptadores.GrupoAdaptadorPizza;
 import com.example.essen.data.Hamburguesas;
+import com.example.essen.data.Otros;
 import com.example.essen.data.Pizza;
 
 public class CatalogoViewPizza extends AppCompatActivity {
@@ -27,6 +31,8 @@ public class CatalogoViewPizza extends AppCompatActivity {
 
         ListView listView = findViewById( R.id.catalogo_listview);
         listView.setAdapter(new GrupoAdaptadorPizza(this, Pizza.pizza));
+        GrupoAdaptadorPizza adaptador =  new GrupoAdaptadorPizza(this, Pizza.pizza);
+        listView.setAdapter((ListAdapter) adaptador);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -34,6 +40,19 @@ public class CatalogoViewPizza extends AppCompatActivity {
                 Intent intent = new Intent(CatalogoViewPizza.this, ActivityPizza.class);
                 intent.putExtra("idLocal", i);
                 startActivity( intent );
+            }
+        });
+        SearchView searchView= findViewById(R.id.txtBuscar);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String newText) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adaptador.filterList(newText);
+                return true;
             }
         });
     }

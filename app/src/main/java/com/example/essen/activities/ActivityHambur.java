@@ -177,47 +177,24 @@ public class ActivityHambur extends AppCompatActivity {
             adaptador.notifyDataSetChanged();
         }
     }
-    public void lanzarInfo (View view) {
-        showDialog();
-    }
-
-
-    Dialog dialog;
-    ImageView infolocales;
-
-    private void showDialog() {
-        dialog = new Dialog(this);
-        dialog.setContentView(R.layout.info_locales);
-
-        Bundle extras = getIntent().getExtras();
-        if(extras != null){
-            idHambur = extras.getInt("idLocal", -1);
-        }
-
-        unHamburguesa = Hamburguesas.hambur.get(idHambur);
-
-        infolocales = (ImageView) dialog.findViewById(R.id.infolocal);
-        infolocales.setImageResource(unHamburguesa.getInfo());
-
-
-        ImageButton close = (ImageButton) dialog.findViewById(R.id.btnClose);
-
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-                //TODO Close button action
-            }
-        });
-
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        dialog.show();
-    }
 
     public void returnHome(View view){
         Intent i = new Intent(this, MenuPrincipalActivity.class);
         Toast.makeText(getApplicationContext(), "Se ha vuelto a Home", Toast.LENGTH_SHORT).show();
+        startActivity(i);
+    }
+    public void lanzarWeb(View view){
+        Intent i = new Intent(this, ActivityWebview.class);
+        i.putExtra("idLocal", idHambur);
+        i.putExtra("idCategoria", Hamburguesas.idcategoria);
+        Toast.makeText(getApplicationContext(), "Se ha inicilizado la web", Toast.LENGTH_SHORT).show();
+        startActivity(i);
+    }
+    public void lanzarInfo(View view){
+        Intent i = new Intent(this, ActivityInfo.class);
+        i.putExtra("idLocal", idHambur);
+        i.putExtra("idCategoria", Hamburguesas.idcategoria);
+        Toast.makeText(getApplicationContext(), "Informacion de Restaurante", Toast.LENGTH_SHORT).show();
         startActivity(i);
     }
 }

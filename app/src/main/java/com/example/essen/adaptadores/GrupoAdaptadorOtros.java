@@ -18,12 +18,15 @@ import java.util.ArrayList;
 public class GrupoAdaptadorOtros extends BaseAdapter {
 
 	private final Activity actividad;
-	private final ArrayList<Otros> lista;
+	private ArrayList<Otros> lista;
+	private ArrayList<Otros> listaOriginal;
 
 	public GrupoAdaptadorOtros(Activity actividad, ArrayList<Otros> lista){
 		super();
 		this.actividad = actividad;
 		this.lista = lista;
+		listaOriginal =new ArrayList<>();
+		listaOriginal.addAll(lista);
 	}
 
 	@Override
@@ -64,6 +67,17 @@ public class GrupoAdaptadorOtros extends BaseAdapter {
 	public long getItemId(int arg0) {
 		Otros unOtros = lista.get(arg0);
 		return unOtros.getId();
+	}
+	public void filterList(String text) {
+		ArrayList<Otros> filteredList = new ArrayList<>();
+		for (Otros otros : listaOriginal) {
+			if (otros.getNombre().toLowerCase().contains(text.toLowerCase())) {
+				filteredList.add(otros);
+			}
+		}
+		lista = filteredList;
+
+		notifyDataSetChanged();
 	}
 
 }

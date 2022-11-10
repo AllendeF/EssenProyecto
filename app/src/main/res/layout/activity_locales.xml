@@ -47,6 +47,17 @@
             android:layout_marginTop="0dp"
              />
 
+        <ImageButton
+            android:id="@+id/webviewbutton"
+            android:onClick="lanzarWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo_local"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/nombre_local"
+            android:backgroundTint="#FFFDFD"
+            android:src="@drawable/webview" />
+
         <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/ratinglocal"
             style="@style/Widget.AppCompat.RatingBar.Small"

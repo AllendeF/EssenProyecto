@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +18,8 @@ import com.example.essen.data.Hamburguesas;
 import com.example.essen.data.Otros;
 
 public class CatalogoViewOtros extends AppCompatActivity {
-
+    TextView listview;
+    SearchView searchView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,8 @@ public class CatalogoViewOtros extends AppCompatActivity {
 
         ListView listView = findViewById( R.id.catalogo_listview);
         listView.setAdapter(new GrupoAdaptadorOtros(this, Otros.otros));
+        GrupoAdaptadorOtros adaptador =  new GrupoAdaptadorOtros(this, Otros.otros);
+        listView.setAdapter((ListAdapter) adaptador);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -34,6 +39,19 @@ public class CatalogoViewOtros extends AppCompatActivity {
                 Intent intent = new Intent(CatalogoViewOtros.this, ActivityOtros.class);
                 intent.putExtra("idLocal", i);
                 startActivity( intent );
+            }
+        });
+        SearchView searchView= findViewById(R.id.txtBuscar);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String newText) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adaptador.filterList(newText);
+                return true;
             }
         });
     }

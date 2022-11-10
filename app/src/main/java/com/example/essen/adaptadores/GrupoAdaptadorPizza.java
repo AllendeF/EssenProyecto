@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.essen.R;
+import com.example.essen.data.Hamburguesas;
 import com.example.essen.data.Otros;
 import com.example.essen.data.Pizza;
 
@@ -18,12 +19,15 @@ import java.util.ArrayList;
 public class GrupoAdaptadorPizza extends BaseAdapter {
 
 	private final Activity actividad;
-	private final ArrayList<Pizza> lista;
+	private ArrayList<Pizza> lista;
+	private ArrayList<Pizza> listaOriginal;
 
 	public GrupoAdaptadorPizza(Activity actividad, ArrayList<Pizza> lista){
 		super();
 		this.actividad = actividad;
 		this.lista = lista;
+		listaOriginal =new ArrayList<>();
+		listaOriginal.addAll(lista);
 	}
 
 	@Override
@@ -64,6 +68,17 @@ public class GrupoAdaptadorPizza extends BaseAdapter {
 	public long getItemId(int arg0) {
 		Pizza unPizza = lista.get(arg0);
 		return unPizza.getId();
+	}
+	public void filterList(String text) {
+		ArrayList<Pizza> filteredList = new ArrayList<>();
+		for (Pizza pizza : listaOriginal) {
+			if (pizza.getNombre().toLowerCase().contains(text.toLowerCase())) {
+				filteredList.add(pizza);
+			}
+		}
+		lista = filteredList;
+
+		notifyDataSetChanged();
 	}
 
 }
