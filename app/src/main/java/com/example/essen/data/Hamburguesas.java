@@ -1,8 +1,13 @@
 package com.example.essen.data;
 
 import android.app.ListActivity;
+import android.os.Bundle;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.essen.R;
+import com.example.essen.adaptadores.GrupoAdaptadorHambur;
 
 import java.util.ArrayList;
 
@@ -20,6 +25,17 @@ public class Hamburguesas extends ListActivity {
     private String nombremenuitem1;
     private String nombremenuitem2;
     private int info;
+    private RecyclerView recyclerView;
+    private GrupoAdaptadorHambur lista;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.list_catalogo);
+        recyclerView = findViewById(R.id.txtBuscar);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
 
     public static ArrayList<Hamburguesas> hambur = new ArrayList<>();
 

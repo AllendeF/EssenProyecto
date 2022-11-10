@@ -17,12 +17,15 @@ import java.util.ArrayList;
 public class GrupoAdaptadorHambur extends BaseAdapter {
 
 	private final Activity actividad;
-	private final ArrayList<Hamburguesas> lista;
+	private ArrayList<Hamburguesas> lista;
+	private ArrayList<Hamburguesas> listaOriginal;
 
 	public GrupoAdaptadorHambur(Activity actividad, ArrayList<Hamburguesas> lista){
 		super();
 		this.actividad = actividad;
 		this.lista = lista;
+		listaOriginal =new ArrayList<>();
+		listaOriginal.addAll(lista);
 	}
 	
 	@Override
@@ -64,6 +67,17 @@ public class GrupoAdaptadorHambur extends BaseAdapter {
 	public long getItemId(int arg0) {
 		Hamburguesas unHamburguesa = lista.get(arg0);
 		return unHamburguesa.getId();
+	}
+	public void filterList(String text) {
+		ArrayList<Hamburguesas> filteredList = new ArrayList<>();
+		for (Hamburguesas hamburguesas : listaOriginal) {
+			if (hamburguesas.getNombre().toLowerCase().contains(text.toLowerCase())) {
+				filteredList.add(hamburguesas);
+			}
+		}
+		lista = filteredList;
+
+		notifyDataSetChanged();
 	}
 
 }

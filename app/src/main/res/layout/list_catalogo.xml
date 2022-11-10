@@ -27,10 +27,16 @@
         android:background="@drawable/btng"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         />
+    <SearchView
+        android:id="@+id/txtBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/foreground" />
     <ListView
         android:id="@+id/catalogo_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tv_titulo_catalogo"
+        app:layout_constraintTop_toBottomOf="@id/txtBuscar"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
