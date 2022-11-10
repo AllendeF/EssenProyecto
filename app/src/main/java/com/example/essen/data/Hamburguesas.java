@@ -18,21 +18,22 @@ public class Hamburguesas extends ListActivity {
     private String preciomitem2;
     private String nombremenuitem1;
     private String nombremenuitem2;
+    private int info;
 
     public static ArrayList<Hamburguesas> hambur = new ArrayList<>();
 
     static {
-        hambur.add( new Hamburguesas("Mcdonald's", "Superseis", 5, R.drawable.mcdonalds, R.drawable.mcdonaldsmenuitem1, R.drawable.mcdonaldsmenuitem2, "25,000 GS", "30,000 GS", "Combo Doble Bacon", "McChicken"));
-        hambur.add( new Hamburguesas("Burger King", "Casa Central", 5,R.drawable.bk, R.drawable.whopper, R.drawable.tendercrisp, "25,000 GS", "20,000 GS", "Whopper", "TenderCrisp"));
-        hambur.add( new Hamburguesas("Wendys", "Casa Central", 4, R.drawable.wendys,R.drawable.combo_wendys,R.drawable.papa_wendys, "60,000 GS", "15,000 GS", "Combo Completo", "Papas Singulares Grandes"));
-        hambur.add( new Hamburguesas("Five Guys", "Casa Central", 4, R.drawable.five_guys, R.drawable.milkshake, R.drawable.fiveguyscheese, "12,000 GS", "25,000 GS", "Gingerbread Milkshake", "CheeseBurger"));
-        hambur.add( new Hamburguesas("Carl's Jr.", "Casa Central", 2, R.drawable.carlsjr, R.drawable.californiaclassic, R.drawable.breakfastburger, "30,000 GS", "27,000 GS", "CaliforniaClassic", "Breakfast Burger"));
-        hambur.add( new Hamburguesas("Sonic", "Casa Central", 1, R.drawable.sonic, R.drawable.butterbacon, R.drawable.steakhousebacon, "25,000 GS", "35,000 GS", "Butterbacon", "Steakhouse Bacon"));
+        hambur.add( new Hamburguesas("Mcdonald's", "Superseis", 5, R.drawable.mcdonalds, R.drawable.mcdonaldsmenuitem1, R.drawable.mcdonaldsmenuitem2, "25,000 GS", "30,000 GS", "Combo Doble Bacon", "McChicken", R.drawable.infomcdonalds));
+        hambur.add( new Hamburguesas("Burger King", "Casa Central", 5,R.drawable.bk, R.drawable.whopper, R.drawable.tendercrisp, "25,000 GS", "20,000 GS", "Whopper", "TenderCrisp", R.drawable.infobk));
+        hambur.add( new Hamburguesas("Wendys", "Casa Central", 4, R.drawable.wendys,R.drawable.combo_wendys,R.drawable.papa_wendys, "60,000 GS", "15,000 GS", "Combo Completo", "Papas Singulares Grandes", R.drawable.infowendys));
+        hambur.add( new Hamburguesas("Five Guys", "Casa Central", 4, R.drawable.five_guys, R.drawable.milkshake, R.drawable.fiveguyscheese, "12,000 GS", "25,000 GS", "Gingerbread Milkshake", "CheeseBurger", R.drawable.five_guys));
+        hambur.add( new Hamburguesas("Carl's Jr.", "Casa Central", 2, R.drawable.carlsjr, R.drawable.californiaclassic, R.drawable.breakfastburger, "30,000 GS", "27,000 GS", "CaliforniaClassic", "Breakfast Burger", R.drawable.infofiveguys));
+        hambur.add( new Hamburguesas("Sonic", "Casa Central", 1, R.drawable.sonic, R.drawable.butterbacon, R.drawable.steakhousebacon, "25,000 GS", "35,000 GS", "Butterbacon", "Steakhouse Bacon", R.drawable.sonic));
 
     }
 
 
-    public Hamburguesas(String nombre, String sucursal, float rating, int image, int menuitem1, int menuitem2, String preciomitem1, String preciomitem2, String nombremenuitem1, String nombremenuitem2) {
+    public Hamburguesas(String nombre, String sucursal, float rating, int image, int menuitem1, int menuitem2, String preciomitem1, String preciomitem2, String nombremenuitem1, String nombremenuitem2, int info) {
         this.nombre = nombre;
         this.sucursal = sucursal;
         this.rating = rating;
@@ -43,6 +44,7 @@ public class Hamburguesas extends ListActivity {
         this.preciomitem2 = preciomitem2;
         this.nombremenuitem1 = nombremenuitem1;
         this.nombremenuitem2 = nombremenuitem2;
+        this.info = info;
     }
     public static void agregarHamburguesas( Hamburguesas unHamburguesas ) {
         hambur.add( unHamburguesas );
@@ -133,6 +135,14 @@ public class Hamburguesas extends ListActivity {
 
     public void setRating(float rating) {
         this.rating = rating;
+    }
+
+    public int getInfo() {
+        return info;
+    }
+
+    public void setInfo(int info) {
+        this.info = info;
     }
 
 }

@@ -43,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
             if (estaComprobado) {
                 Log.i(TAG, "Credenciales correctas");
                 setUsuarioLogueado();
+                Toast.makeText(getApplicationContext(), "Se ha iniciadio con exito", Toast.LENGTH_SHORT).show();
                 Intent intentMenuPricipal = new Intent( this, MenuPrincipalActivity.class );
                 startActivity( intentMenuPricipal );
             } else {

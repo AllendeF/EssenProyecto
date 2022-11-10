@@ -34,6 +34,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageView
+                android:id="@+id/background"
                 android:layout_width="match_parent"
                 android:layout_height="122dp"
                 android:layout_below="@id/imageview"
@@ -111,14 +112,75 @@
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
-            <ImageView
+            <HorizontalScrollView
                 android:id="@+id/Promo1"
-                android:layout_width="252dp"
-                android:layout_height="200dp"
-                android:layout_below="@+id/Botton2"
+                android:layout_width="match_parent"
+                android:layout_height="155dp"
+                android:layout_below="@+id/background"
+                android:fillViewport="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="30dp"
-                android:src="@drawable/promo1" />
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/promohambur">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/promopizza">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/comida_tradicional">
+
+                    </ImageView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <ImageButton
+                android:id="@+id/cerrarsesion"
+                android:onClick="cerrarSesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#0B0A0A"
+                app:srcCompat="@drawable/cerrarsesion" />
+
+            <ImageButton
+                android:onClick="verPerfil"
+                android:id="@+id/imageButton2"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#090707"
+                app:srcCompat="@drawable/verperfil" />
+
         </RelativeLayout>
     </ScrollView>
 
@@ -127,7 +189,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="Restaurantes Populares"
         android:textColor="@color/black"
         android:textSize="18dp"
@@ -160,7 +222,7 @@
                 android:layout_centerVertical="true"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/bk" />
+                android:src="@drawable/bk" />
 
             <ImageButton
                 android:id="@+id/litllec_menu"

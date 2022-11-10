@@ -1,6 +1,7 @@
 package com.example.essen.activities;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -71,8 +73,11 @@ public class ActivityComentario extends AppCompatActivity {
                 String comentario = String.valueOf(review.getText());
                 muestraRating.setText("Tu calificación: \n" + temp + "\n" + comentario);
 
+                Toast.makeText(getApplicationContext(), "Se ha agregado tu comentario", Toast.LENGTH_SHORT).show();
+
                 Comentarios comentarios = new Comentarios( comentario, rateValue, Usuario.getUsuarioLogueado(), local);
                 Comentarios.agregarComentario(comentarios);
+
 
                 review.setText("");
                 ratingBar.setRating(0);

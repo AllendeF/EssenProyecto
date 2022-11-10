@@ -1,13 +1,18 @@
 package com.example.essen.activities;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -123,9 +128,42 @@ public class ActivityPizza extends AppCompatActivity {
 
     public void lanzarComentario (View view) {
         Intent i = new Intent(this, ActivityComentario.class);
-        i.putExtra("idScreen", i);
         startActivity(i);
     }
+    public void lanzarInfo (View view) {
+        showDialog();
+    }
+
+    Dialog dialog;
+    ImageView infolocales;
+
+    private void showDialog() {
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.info_locales);
+
+        infolocales = (ImageView) findViewById(R.id.infolocal);
+        infolocales.setImageResource(unPizza.getInfo());
 
 
+        ImageButton close = (ImageButton) dialog.findViewById(R.id.btnClose);
+
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                //TODO Close button action
+            }
+        });
+
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        dialog.show();
+    }
+    public void returnHome(View view){
+        Intent i = new Intent(this, MenuPrincipalActivity.class);
+        Toast.makeText(getApplicationContext(), "Se ha vuelto a Home", Toast.LENGTH_SHORT).show();
+        startActivity(i);
+    }
 }
+
+

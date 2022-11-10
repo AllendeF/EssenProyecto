@@ -5,10 +5,14 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -93,6 +97,39 @@ public class MenuPrincipalActivity extends AppCompatActivity {
         Intent i = new Intent(this, CatalogoViewOtros.class);
         //i.putExtra("id", (long)0);
         startActivity(i);
+    }
+
+    public void cerrarSesion(View view){
+        Toast.makeText(getApplicationContext(), "Se ha cerrado sesion", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(this, InicioActivity.class);
+        startActivity(i);
+    }
+
+    public void verPerfil (View view){
+        Intent i = new Intent(this, ActivityPerfil.class);
+        Toast.makeText(getApplicationContext(), "Ha ingresado a perfil", Toast.LENGTH_SHORT).show();
+        startActivity(i);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate( R.menu.ver_grupo_menu , menu );
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch( item.getItemId() ) {
+            case R.id.cerrarsesion1:{
+                Toast.makeText(getApplicationContext(), "Se ha cerrado sesion", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, InicioActivity.class);
+                startActivity(i);
+            }case R.id.verperfil:{
+                Intent i = new Intent(this, ActivityPerfil.class);
+                Toast.makeText(getApplicationContext(), "Ha ingresado a perfil", Toast.LENGTH_SHORT).show();
+                startActivity(i);
+            }
+
+        }
+        return true;
     }
 }
 

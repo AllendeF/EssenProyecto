@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -37,6 +38,8 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
         Usuario usuario = new Usuario( nombreApellido, email, password, telefono);
         Usuario.agregarUsuario(usuario);
+
+        Toast.makeText(getApplicationContext(), "Usuario Creado Exitosamente", Toast.LENGTH_SHORT).show();
 
         Intent intentLanzarLogin = new Intent( this, LoginActivity.class ) ;
         startActivity( intentLanzarLogin );

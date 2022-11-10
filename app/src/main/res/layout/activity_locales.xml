@@ -48,14 +48,13 @@
              />
 
         <androidx.appcompat.widget.AppCompatRatingBar
-            style="@style/Widget.AppCompat.RatingBar.Small"
             android:id="@+id/ratinglocal"
+            style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
             android:rating="5" />
 
         <ImageView
@@ -84,6 +83,7 @@
 
         <Button
             android:id="@+id/Informacion1"
+            android:onClick="lanzarInfo"
             android:layout_width="175dp"
             android:layout_height="36dp"
             android:layout_below="@id/imageView2"
@@ -151,6 +151,17 @@
             android:layout_marginTop="10dp"
             android:layout_below="@+id/calificacion"
             />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:onClick="returnHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#100F0F"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            app:srcCompat="@drawable/returnhome" />
 
     </RelativeLayout>
     </ScrollView>

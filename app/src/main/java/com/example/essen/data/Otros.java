@@ -18,20 +18,21 @@ public class Otros extends ListActivity {
     private String preciomitem2;
     private String nombremenuitem1;
     private String nombremenuitem2;
+    private int info;
 
     public static ArrayList<Otros> otros = new ArrayList<>();
 
     static {
-        otros.add( new Otros("Hiroshima", "Shopping del Sol", 5, R.drawable.hiroshima, R.drawable.okonomiyaki, R.drawable.sushi, "40,000 GS", "80,000 GS", "Okonomiyaki", "Sushi 20 piezas"));
-        otros.add( new Otros("Sukiyaki", "Casa Central", 2, R.drawable.sukiyaki, R.drawable.sukiyakiplato, R.drawable.ensaladawagyu, "50,000 GS", "55,000 GS", "Ramen", "Ensalada Wagyu"));
-        otros.add( new Otros("Koggi", "Casa Central", 4, R.drawable.koggi, R.drawable.bibimbap, R.drawable.koggiwrap, "35,000 GS", "27,000 GS", "BibimBap", "Wrap de Carne"));
-        otros.add( new Otros("Kyungkyune", "Casa Central", 3, R.drawable.kyungkyune, R.drawable.parrillakoreana, R.drawable.postrecoreano, "120,000 GS", "22,000 GS", "Parrilla Koreana 8/p", "Postre K" ));
-        otros.add( new Otros("El Patio", "Casa Central", 2, R.drawable.el_patio, R.drawable.paella, R.drawable.conquistador, "200,000 GS", "75,000 GS", "Paella 10/p", "El Conquistador"));
-        otros.add( new Otros("Kokoro'o", "Casa Central", 0, R.drawable.kokoroo, R.drawable.pollofrito, R.drawable.sandwichpollofrito, "25,000 GS", "17,000 GS", "Pollo Frito", "Sandwich Pollo Frito"));
+        otros.add( new Otros("Hiroshima", "Shopping del Sol", 5, R.drawable.hiroshima, R.drawable.okonomiyaki, R.drawable.sushi, "40,000 GS", "80,000 GS", "Okonomiyaki", "Sushi 20 piezas", R.drawable.infohiroshima));
+        otros.add( new Otros("Sukiyaki", "Casa Central", 2, R.drawable.sukiyaki, R.drawable.sukiyakiplato, R.drawable.ensaladawagyu, "50,000 GS", "55,000 GS", "Ramen", "Ensalada Wagyu", R.drawable.infosuki));
+        otros.add( new Otros("Koggi", "Casa Central", 4, R.drawable.koggi, R.drawable.bibimbap, R.drawable.koggiwrap, "35,000 GS", "27,000 GS", "BibimBap", "Wrap de Carne", R.drawable.infokoggi));
+        otros.add( new Otros("Kyungkyune", "Casa Central", 3, R.drawable.kyungkyune, R.drawable.parrillakoreana, R.drawable.postrecoreano, "120,000 GS", "22,000 GS", "Parrilla Koreana 8/p", "Postre K", R.drawable.infokyung ));
+        otros.add( new Otros("El Patio", "Casa Central", 2, R.drawable.el_patio, R.drawable.paella, R.drawable.conquistador, "200,000 GS", "75,000 GS", "Paella 10/p", "El Conquistador", R.drawable.infopatio));
+        otros.add( new Otros("Kokoro'o", "Casa Central", 0, R.drawable.kokoroo, R.drawable.pollofrito, R.drawable.sandwichpollofrito, "25,000 GS", "17,000 GS", "Pollo Frito", "Sandwich Pollo Frito", R.drawable.infokoko));
 
     }
 
-    public Otros(String nombre, String sucursal, float rating, int image, int menuitem1, int menuitem2, String preciomitem1, String preciomitem2, String nombremenuitem1, String nombremenuitem2) {
+    public Otros(String nombre, String sucursal, float rating, int image, int menuitem1, int menuitem2, String preciomitem1, String preciomitem2, String nombremenuitem1, String nombremenuitem2, int info) {
         this.nombre = nombre;
         this.sucursal = sucursal;
         this.rating = rating;
@@ -42,6 +43,7 @@ public class Otros extends ListActivity {
         this.preciomitem2 = preciomitem2;
         this.nombremenuitem1 = nombremenuitem1;
         this.nombremenuitem2 = nombremenuitem2;
+        this.info = info;
     }
     public static void agregarOtros( Otros unOtros ) {
         otros.add( unOtros );
@@ -131,6 +133,14 @@ public class Otros extends ListActivity {
 
     public void setMenuitem2(int menuitem2) {
         this.menuitem2 = menuitem2;
+    }
+
+    public int getInfo() {
+        return info;
+    }
+
+    public void setInfo(int info) {
+        this.info = info;
     }
 
 }

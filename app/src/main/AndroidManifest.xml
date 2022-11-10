@@ -29,7 +29,8 @@
         <activity android:name=".activities.ActivityPizza"/>
         <activity android:name=".activities.ActivityHambur"/>
         <activity android:name=".activities.ActivityOtros"/>
-        <activity android:name=".activities.ActivityComentario"
+        <activity android:name=".activities.ActivityComentario"/>
+        <activity android:name=".activities.ActivityPerfil"
             android:exported="true">
 
         </activity>

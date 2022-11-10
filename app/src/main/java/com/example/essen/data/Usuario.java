@@ -54,6 +54,14 @@ public class Usuario {
         return null;
     }
 
+    public String getNombreApellido() {
+        return nombreApellido;
+    }
+
+    public void setNombreApellido(String nombreApellido) {
+        this.nombreApellido = nombreApellido;
+    }
+
     public String getMail() {
         return mail;
     }
@@ -68,5 +76,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 }

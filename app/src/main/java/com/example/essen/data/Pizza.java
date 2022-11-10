@@ -18,20 +18,21 @@ public class Pizza extends ListActivity {
     private String preciomitem2;
     private String nombremenuitem1;
     private String nombremenuitem2;
+    private int info;
 
     public static ArrayList<Pizza> pizza = new ArrayList<>();
 
     static {
-        pizza.add( new Pizza("Pizza Hut", "SuperSeis", 5, R.drawable.pizzahutlogo, R.drawable.pepperonipizza, R.drawable.ovenbakedpastas, "55,000 GS","45,000 GS", "Pizza Familiar", "Baked Pasta"));
-        pizza.add( new Pizza("Sbarro", "Mcal. Lopez", 2, R.drawable.sbarro, R.drawable.sbarroslides, R.drawable.breadsticks, "20,000 GS", "7,000 GS", "Pizza Slides", "Breadsticks"));
-        pizza.add( new Pizza("Papa John's", "Paseo la Galeria", 5, R.drawable.papajohns, R.drawable.quesadilla, R.drawable.nocrust, "17,000 GS", "30,000 GS", "Quesadilla de Pollo", "Pizza NoCrust"));
-        pizza.add( new Pizza("Sicilia", "Paseo la Galeria", 4, R.drawable.sicilia, R.drawable.vinossicilia, R.drawable.siciliamediana, "90,000 GS", "67,000 GS","Vino Sicilia", "Pizza Mediana"));
-        pizza.add( new Pizza("Little Caesars", "Casa Central", 2, R.drawable.litllec, R.drawable.combocompleto, R.drawable.detroitstyle, "120,000 GS", "70,000 GS", "Combo Completo", "Detroit Style"));
-        pizza.add( new Pizza("Dominos", "Shopping del Sol", 1, R.drawable.dominos,R.drawable.dominossmall, R.drawable.dominosdoublecombo, "35,000 GS", "175,000 GS", "Pizza Small", "Doble Pizza Combo"));
+        pizza.add( new Pizza("Pizza Hut", "SuperSeis", 5, R.drawable.pizzahutlogo, R.drawable.pepperonipizza, R.drawable.ovenbakedpastas, "55,000 GS","45,000 GS", "Pizza Familiar", "Baked Pasta", R.drawable.infopizzahut));
+        pizza.add( new Pizza("Sbarro", "Mcal. Lopez", 2, R.drawable.sbarro, R.drawable.sbarroslides, R.drawable.breadsticks, "20,000 GS", "7,000 GS", "Pizza Slides", "Breadsticks", R.drawable.infosbarro));
+        pizza.add( new Pizza("Papa John's", "Paseo la Galeria", 5, R.drawable.papajohns, R.drawable.quesadilla, R.drawable.nocrust, "17,000 GS", "30,000 GS", "Quesadilla de Pollo", "Pizza NoCrust", R.drawable.infopapa));
+        pizza.add( new Pizza("Sicilia", "Paseo la Galeria", 4, R.drawable.sicilia, R.drawable.vinossicilia, R.drawable.siciliamediana, "90,000 GS", "67,000 GS","Vino Sicilia", "Pizza Mediana", R.drawable.infosicilia));
+        pizza.add( new Pizza("Little Caesars", "Casa Central", 2, R.drawable.litllec, R.drawable.combocompleto, R.drawable.detroitstyle, "120,000 GS", "70,000 GS", "Combo Completo", "Detroit Style", R.drawable.infolilc));
+        pizza.add( new Pizza("Dominos", "Shopping del Sol", 1, R.drawable.dominos,R.drawable.dominossmall, R.drawable.dominosdoublecombo, "35,000 GS", "175,000 GS", "Pizza Small", "Doble Pizza Combo", R.drawable.infodominos));
 
     }
 
-    public Pizza(String nombre, String sucursal, float rating, int image, int menuitem1, int menuitem2, String preciomitem1, String preciomitem2, String nombremenuitem1, String nombremenuitem2) {
+    public Pizza(String nombre, String sucursal, float rating, int image, int menuitem1, int menuitem2, String preciomitem1, String preciomitem2, String nombremenuitem1, String nombremenuitem2, int info) {
         this.nombre = nombre;
         this.sucursal = sucursal;
         this.rating = rating;
@@ -42,6 +43,7 @@ public class Pizza extends ListActivity {
         this.preciomitem2 = preciomitem2;
         this.nombremenuitem1 = nombremenuitem1;
         this.nombremenuitem2 = nombremenuitem2;
+        this.info = info;
     }
     public static void agregarPizza( Pizza unPizza ) {
         pizza.add( unPizza );
@@ -132,4 +134,13 @@ public class Pizza extends ListActivity {
     public void setMenuitem2(int menuitem2) {
         this.menuitem2 = menuitem2;
     }
+
+    public int getInfo() {
+        return info;
+    }
+
+    public void setInfo(int info) {
+        this.info = info;
+    }
+
 }
